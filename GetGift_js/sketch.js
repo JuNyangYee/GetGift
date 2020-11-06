@@ -10,27 +10,52 @@ function setup() {
 function draw() {
   background(0);
 
-  if (frameCount == 60) {
+  if (frameCount % 60 == 0) {
     b.push(new OB());
-    frameCount = 0;
   }
   
   for (let i = 0; i < b.length; i++) {
     b[i].update();
     b[i].show();
     
-    if (b[i].y > 350) {
+    if (b[i].y > 350 || b[i].y < -350) {
+      b.shift();
+    } else if (b[i].x < -180 || b[i].x > 180) {
       b.shift();
     }
+
   }
+
+  print(b.lenght);
 }
 
 function keyPressed() {
-  for (let i = 0; i < b.length; i++) {
-    if (b[i].y > 0) {
-      b.shift();
+  
+  if (keyCode == DOWN_ARROW) {
+    for (let i = 0; i < b.length; i++) {
+      if (b[i].y > 80) {
+        b[i].vel = 100;
+      }
     }
   }
+
+  if (keyCode == UP_ARROW) {
+    for (let i = 0; i < b.length; i++) {
+      if (b[i].y > 80) {
+        b[i].vel = -20;
+        b[i].xMove = random(-50, 51);
+      }
+    }
+  }
+
+  if (keyCode == 32) {
+    for (let i = 0; i < b.length; i++) {
+      if (b[i].y > 0) {
+        b.shift();
+      }
+    }
+  }
+  
 }
 
 class OB {
@@ -39,6 +64,7 @@ class OB {
     this.x = random(-100, 101);
     this.vel = 5;
     this.timeLong = 0;
+    this.xMove = 0;
   }
   
   update() {
@@ -48,10 +74,11 @@ class OB {
   show() {
     push();
     translate(this.x, this.y, 0);
-    this.y += 2 * (frameCount*0.01) + this.vel;
+    this.y += 2 * (frameCount%60*0.01) + this.vel;
+    this.x += this.xMove;
   
-    rotateX(this.timeLong * 0.01);
-    rotateY(this.timeLong * 0.01);
+    rotateX(this.timeLong * 0.01 );
+    rotateY(this.timeLong * 0.01 );
     
     fill(255);
     
