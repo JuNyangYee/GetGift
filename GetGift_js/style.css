@@ -3,7 +3,7 @@
 html {
   margin: 0;
   padding: 0;
-  background-color: #151515;
+  background-color: #f0f0f0;
 }
 
 body {
@@ -18,7 +18,7 @@ body {
   height: 80px;
   margin: 0;
   padding: 50px;
-  padding-bottom: 5px;
+  padding-bottom: 0px;
 
   font-size: 20pt;
   font-weight: bold;
@@ -30,20 +30,66 @@ body {
   display: block;
 }
 
-#Text {
+.Text h6{
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  color: #151515;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+.Text h5{
+  margin-top: 60px;
+  margin-bottom: 20px;
+
+  color: #151515;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+.Text p{
+  padding-left: 70px;
+  padding-right: 70px;
+
+  color: #151515;
+  text-align: justify;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+.Text {
   position: relative;
-  top: 720px;
-  left: 0px;
+  top: 645px;
   width: 460px;
   height: 815px;
-  background-color: tomato;
+  padding-top: 40px;
+  margin: 0;
+  background-color: #f0f0f0;
+
+  color: #151515;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 1000;
+  font-family: "Nanum Gothic", sans-serif;
+
   display: block;
 }
 
+
+
 canvas {
+  position: relative;
+  top: -860px;
   margin: 0;
   padding: 50px;
-  padding-top: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   background-color: #f0f0f0;
   display: block;
 }
