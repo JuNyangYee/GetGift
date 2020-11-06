@@ -31,7 +31,7 @@ function draw() {
 
 function keyPressed() {
 
-  if (keyCode == DOWN_ARROW) {
+  if (key == 's') {
     for (let i = 0; i < b.length; i++) {
       if (b[i].y > 80) {
         b[i].vel = 100;
@@ -39,19 +39,11 @@ function keyPressed() {
     }
   }
 
-  if (keyCode == UP_ARROW) {
+  if (key == 'w') {
     for (let i = 0; i < b.length; i++) {
       if (b[i].y > 80) {
         b[i].vel = -20;
         b[i].xMove = random(-50, 51);
-      }
-    }
-  }
-
-  if (keyCode == 32) {
-    for (let i = 0; i < b.length; i++) {
-      if (b[i].y > 0) {
-        b.shift();
       }
     }
   }
